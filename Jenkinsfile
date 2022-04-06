@@ -15,7 +15,9 @@ pipeline{
         }
 
         stage("build docker image"){
+            script{
                     app=docker.build("service/testservice")
+            }
         }
     }
 }
