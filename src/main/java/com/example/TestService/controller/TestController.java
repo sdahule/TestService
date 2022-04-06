@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.TestService.entitiy.Customer;
@@ -18,5 +19,16 @@ public class TestController {
 	@GetMapping("/test")
 	public List<Customer> testService() {
 		return repo.findAll();
+	}
+
+
+	@GetMapping("/health")
+	public String testHealth(){
+		return "Health ok!!";
+	}
+
+	@PostMapping("/insert")
+	public void insertdata(){
+		
 	}
 }
