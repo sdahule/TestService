@@ -7,11 +7,15 @@ pipeline{
     }
 
     stages {
-        stage("build"){
+        stage("build application"){
             steps{
                 echo 'building the application'
                 sh 'mvn clean package'
             }
+        }
+
+        stage("build docker image"){
+                    app=docker.build("service/testservice")
         }
     }
 }
