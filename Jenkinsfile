@@ -13,11 +13,5 @@ pipeline{
                 sh 'mvn clean package'
             }
         }
-
-        stage("build docker image"){
-            script{
-                    app=docker.build("service/testservice")
-            }
-        }
     }
 }
